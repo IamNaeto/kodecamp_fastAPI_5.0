@@ -1,0 +1,27 @@
+Task 4: Billing System for Small Shop
+
+Goal: Create a system to manage bills and apply discounts.
+
+Features:
+
+- Create a Product class with name, price, and quantity.
+
+- Create a Cart class to handle billing logic.
+
+- Use math.ceil() to round up totals.
+
+- Use datetime for timestamps and json for bill history.
+
+- All billing logic should be in a separate module billing.py.
+
+Menu Options:
+
+- Add product to cart
+
+- View cart and total
+
+- Apply discount if total > N10,000
+
+- Save bill to file
+
+- View previous transactions

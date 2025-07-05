@@ -1,0 +1,25 @@
+Task 3: Personal Diary App
+
+Goal: Write and view personal diary entries.
+
+Features:
+
+- Create a DiaryEntry class with date, title, and content.
+
+- Use datetime.now() to timestamp each entry.
+
+- Use 'json' to store/load all diary entries.
+
+- Place helper functions in a module called diary_tools.py.
+
+- Validate input and handle file-related exceptions.
+
+Menu Options:
+
+- Add entry
+
+- View all entries
+
+- Search by date or title
+
+- Save & Exit

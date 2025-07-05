@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Rich Dad Poor Dad",
+        "author": "Robert Kiyosaki",
+        "available": true
+    },
+    {
+        "title": "Dare To Dream",
+        "author": "Charles O. Egesionu",
+        "available": true
+    },
+    {
+        "title": "Dream Count",
+        "author": "Chimamanda Adiche",
+        "available": false
+    }
+]

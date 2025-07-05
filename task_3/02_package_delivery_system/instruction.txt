@@ -1,0 +1,23 @@
+Task 2: Package Delivery System
+
+Goal: Track packages and manage their delivery status.
+
+Features:
+
+- Create a Package class with: id (use uuid.uuid4()), sender, recipient, status.
+
+- Store multiple packages in a list.
+
+- Use the 'json' module to save and load delivery data.
+
+- Use a separate module (delivery_utils.py) for file operations.
+
+Menu Options:
+
+- Register a package
+
+- Mark package as delivered
+
+- View all packages
+
+- Save/Load from file
