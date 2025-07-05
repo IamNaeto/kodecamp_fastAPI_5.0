@@ -24,41 +24,41 @@
 
 
 movies = {
-    "Avatar": {"seats": 5, "price": 10},
-    "Oppenheimer": {"seats": 3, "price": 12},
-    "Barbie": {"seats": 4, "price": 8}
+    "Avengers": {"price": 15, "seats": 20},
+    "Barbie": {"price": 12, "seats": 15},
+    "Oppenheimer": {"price": 18, "seats": 10}
 }
 
 def view_movies():
-    print("Available Movies:")
-    for name, info in movies.items():
-        print(f"{name} - Seats: {info['seats']} - Price: ${info['price']}")
+    print("Movies Available:")
+    for i, (name, data) in enumerate(movies.items(), 1):
+        print(f"{i}. {name} - ${data['price']} - {data['seats']} seats left")
     print()
 
 def book_ticket():
     movie = input("Enter movie name: ").title()
     if movie in movies:
         try:
-            quantity = int(input("Enter number of tickets: "))
-            if quantity <= movies[movie]["seats"]:
-                movies[movie]["seats"] -= quantity
-                total = quantity * movies[movie]["price"]
-                print(f"Booked {quantity} ticket(s) for {movie}. Total: ${total}\n")
+            qty = int(input("How many tickets?: "))
+            if qty <= movies[movie]['seats']:
+                total = qty * movies[movie]['price']
+                movies[movie]['seats'] -= qty
+                print(f"Booking successful! You paid ${total}\n{movies[movie]['seats']} seats remaining.\n")
             else:
-                print("Not enough seats available.\n")
-        except ValueError:
+                print("Error: Not enough seats available.\n")
+        except:
             print("Invalid quantity.\n")
     else:
         print("Movie not found.\n")
 
 while True:
-    print("1. View Movies\n2. Book Ticket\n3. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        view_movies()
+    print("1. Book Ticket\n2. View Movies\n3. Exit")
+    choice = input("\nEnter your choice: ")
+    if choice == "1": book_ticket()
     elif choice == "2":
-        book_ticket()
-    elif choice == "3":
-        break
-    else:
-        print("Invalid option.\n")
+        print("Movies Available:")
+        for name, data in movies.items():
+            print(f"- {name}: ${data['price']} ({data['seats']} seats left)")
+        print()
+    elif choice == "3": break
+    else: print("Invalid option.\n")

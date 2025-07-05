@@ -21,70 +21,56 @@
 # - Handle invalid inputs and missing items
 
 
-items = {
-    "rice": 400,
-    "beans": 300,
-    "oil": 250,
-    "milk": 150
-}
+print("\nAvailable Items:\n- Rice: $400\n- Beans: $350\n- Oil: $500")
+items = {"rice": 400, "beans": 350, "oil": 500}
 cart = []
 
-def show_items():
-    print("Available items:")
-    for item, price in items.items():
-        print(f"{item.title()} - ${price}")
-    print()
-
-def add_to_cart():
-    item = input("Enter item to add: ").lower()
-    if item in items:
+def add_cart():
+    name = input("Enter item name: ").lower()
+    if name in items:
         try:
             qty = int(input("Enter quantity: "))
-            cart.append({"item": item, "quantity": qty, "price": items[item]})
-            print("Added to cart.\n")
-        except ValueError:
+            cart.append({"item": name, "quantity": qty, "price": items[name]})
+            print(f"Added {qty} x {name.title()} to cart.\n")
+        except:
             print("Invalid quantity.\n")
     else:
         print("Item not available.\n")
 
-def remove_item():
-    item = input("Enter item to remove: ").lower()
+def view_cart():
+    total = 0
+    print("--- Cart ---")
     for c in cart:
-        if c["item"] == item:
-            cart.remove(c)
-            print("Removed from cart.\n")
-            return
-    print("Item not found in cart.\n")
+        subtotal = c['quantity'] * c['price']
+        total += subtotal
+        print(f"{c['item'].title()} x{c['quantity']} - ${subtotal}")
+    print("Total:", f"${total}\n")
 
-def clear_cart():
+def checkout():
+    total = sum(c['quantity'] * c['price'] for c in cart)
+    print("Checkout complete.\nYou paid:", f"${total}\nThank you for shopping!\n")
+    cart.clear()
+
+def remove():
+    name = input("Enter item to remove: ").lower()
+    for c in cart:
+        if c['item'] == name:
+            cart.remove(c)
+            print("Item removed.\n")
+            return
+    print("Item not found.\n")
+
+def clear():
     cart.clear()
     print("Cart cleared.\n")
 
-def view_cart():
-    if not cart:
-        print("Cart is empty.\n")
-        return
-    total = 0
-    for c in cart:
-        subtotal = c["quantity"] * c["price"]
-        total += subtotal
-        print(f"{c['item'].title()} x {c['quantity']} = ${subtotal}")
-    print("Total Bill:", f"${total:.2f}\n")
-
 while True:
-    print("1. Show Items\n2. Add to Cart\n3. View Cart\n4. Remove Item\n5. Clear Cart\n6. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        show_items()
-    elif choice == "2":
-        add_to_cart()
-    elif choice == "3":
-        view_cart()
-    elif choice == "4":
-        remove_item()
-    elif choice == "5":
-        clear_cart()
-    elif choice == "6":
-        break
-    else:
-        print("Invalid choice.\n")
+    print("1. Add to Cart\n2. View Cart\n3. Checkout\n4. Remove Item\n5. Clear Cart\n6. Exit")
+    choice = input("\nEnter your choice: ")
+    if choice == "1": add_cart()
+    elif choice == "2": view_cart()
+    elif choice == "3": checkout()
+    elif choice == "4": remove()
+    elif choice == "5": clear()
+    elif choice == "6": break
+    else: print("Invalid choice.\n")

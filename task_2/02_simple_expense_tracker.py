@@ -24,42 +24,33 @@
 
 
 expenses = []
+print("\nWelcome to Expense Tracker")
 
-def add_expense():
-    item = input("Enter expense description: ")
+def add_exp():
+    desc = input("Enter item description: ")
     try:
-        amount = float(input("Enter amount: "))
-        expenses.append({"item": item, "amount": amount})
-        print("Expense added.\n")
-    except ValueError:
+        amt = float(input("Enter amount: "))
+        expenses.append({"item": desc, "amount": amt})
+        print("Expense added successfully.\n")
+    except:
         print("Invalid amount.\n")
 
-def view_expenses():
-    if not expenses:
-        print("No expenses recorded.\n")
-        return
-    for exp in expenses:
-        print(f"{exp['item']}: ${exp['amount']:.2f}")
+def view_all_exp():
+    print("--- All Expenses ---")
+    for i, e in enumerate(expenses):
+        print(f"{i+1}. {e['item']} - ${e['amount']:.2f}")
     print()
 
-def show_summary():
-    if not expenses:
-        print("No expenses to summarize.\n")
-        return
-    total = sum(e["amount"] for e in expenses)
-    avg = total / len(expenses)
-    print(f"Total: ${total:.2f}, Average: ${avg:.2f}\n")
+def total_avg():
+    total = sum(e['amount'] for e in expenses)
+    avg = total / len(expenses) if expenses else 0
+    print(f"Total Expenses: ${total:.2f}\nAverage Expense: ${avg:.2f}\n")
 
 while True:
-    print("1. Add Expense\n2. View Expenses\n3. Total & Average\n4. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        add_expense()
-    elif choice == "2":
-        view_expenses()
-    elif choice == "3":
-        show_summary()
-    elif choice == "4":
-        break
-    else:
-        print("Invalid choice.\n")
+    print("1. Add Expense\n2. View All Expenses\n3. View Total and Average\n4. Exit")
+    choice = input("\nEnter your choice: ")
+    if choice == "1": add_exp()
+    elif choice == "2": view_all_exp()
+    elif choice == "3": total_avg()
+    elif choice == "4": break
+    else: print("Invalid choice.\n")

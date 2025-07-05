@@ -17,55 +17,45 @@
 
 students = []
 
+print("Welcome to the Student Management System")
+
 def add_student():
     name = input("Enter student name: ")
     try:
-        scores = []
-        for i in range(1, 4):
-            score = float(input(f"Enter score {i}: "))
-            scores.append(score)
-        students.append({"name": name, "scores": scores})
-        print("Student added successfully.\n")
+        math = float(input("Enter score for Math: "))
+        eng = float(input("Enter score for English: "))
+        sci = float(input("Enter score for Science: "))
+        students.append({"name": name, "scores": [math, eng, sci]})
+        print(f"Student '{name}' added successfully!\n")
     except ValueError:
-        print("Invalid score input. Please enter numbers.\n")
+        print("Invalid score input.\n")
 
-def show_all_students():
+def view_all():
     if not students:
-        print("No students to show.\n")
+        print("No students found.\n")
         return
+    print("--- Student Records ---")
+    for s in students:
+        avg = sum(s['scores']) / 3
+        status = "Fail" if avg < 50 else "Pass" if avg < 80 else "Excellent"
+        print(f"Name: {s['name']}\nScores: {s['scores']}\nAverage: {avg}\nStatus: {status}\n")
 
-    for student in students:
-        avg = sum(student["scores"]) / 3
-        if avg < 50:
-            status = "Fail"
-        elif avg < 80:
-            status = "Pass"
-        else:
-            status = "Excellent"
-        print(f"{student['name']} - Avg: {avg:.2f} - Status: {status}")
-    print()
-
-def search_student():
-    name = input("Enter student name to search: ")
-    found = False
-    for student in students:
-        if student["name"].lower() == name.lower():
-            print("Student found:", student)
-            found = True
-            break
-    if not found:
-        print("Student not found.\n")
+def search():
+    name = input("Enter name to search: ")
+    for s in students:
+        if s['name'].lower() == name.lower():
+            avg = sum(s['scores']) / 3
+            status = "Fail" if avg < 50 else "Pass" if avg < 80 else "Excellent"
+            print("Student found!")
+            print(f"Scores: {s['scores']}\nAverage: {avg}\nStatus: {status}\n")
+            return
+    print("Student not found.\n")
 
 while True:
-    print("1. Add Student\n2. Show All\n3. Search Student\n4. Exit")
-    choice = input("Choose: ")
-    if choice == "1":
-        add_student()
-    elif choice == "2":
-        show_all_students()
-    elif choice == "3":
-        search_student()
-    elif choice == "4":
-        break
-    else:
-        print("Invalid option.\n")
+    print("1. Add New Student\n2. View All Students\n3. Search Student by Name\n4. Exit")
+    choice = input("\nEnter your choice: ")
+    if choice == "1": add_student()
+    elif choice == "2": view_all()
+    elif choice == "3": search()
+    elif choice == "4": break
+    else: print("Invalid choice.\n")
