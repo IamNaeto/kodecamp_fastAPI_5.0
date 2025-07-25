@@ -1,0 +1,36 @@
+{
+  "name": "Jane Doe",
+  "title": "Software Developer",
+  "contact": {
+    "email": "jane@example.com",
+    "phone": "+1234567890",
+    "linkedin": "linkedin.com/in/janedoe"
+  },
+  "summary": "Passionate developer with 5+ years of experience building full-stack applications.",
+  "skills": ["Python", "JavaScript", "Django", "React", "Git", "SQL"],
+  "experience": [
+    {
+      "company": "TechCorp",
+      "position": "Senior Developer",
+      "years": "2020 - Present",
+      "details": [
+        "Led a team of 5 engineers",
+        "Built REST APIs and microservices"
+      ]
+    },
+    {
+      "company": "CodeWorks",
+      "position": "Junior Developer",
+      "years": "2017 - 2020",
+      "details": [
+        "Developed front-end features with React",
+        "Optimized SQL queries for performance"
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.Sc. in Computer Science",
+    "institution": "University of Example",
+    "years": "2013 - 2017"
+  }
+}
