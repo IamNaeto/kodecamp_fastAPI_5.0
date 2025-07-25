@@ -35,3 +35,6 @@ def main():
             break
         else:
             print("Invalid choice.")
+
+if __name__ == "__main__":
+    main()
