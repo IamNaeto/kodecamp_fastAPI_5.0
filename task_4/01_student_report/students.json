@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Charles",
+        "subjects_scores": {
+            "Chemistry": 56.0,
+            "Maths": 98.0,
+            "Physics": 100.0,
+            "Igbo": 56.0
+        },
+        "average": 77.5,
+        "grade": "C"
+    }
+]
