@@ -36,3 +36,7 @@ def view_inventory(inventory):
         return
     for book in inventory:
         print(f"{book.title} by {book.author} | ${book.price:.2f} | Stock: {book.stock}")
+
+def search_books(inventory, keyword):
+    results = [b for b in inventory if keyword.lower() in b.title.lower()]
+    return results
