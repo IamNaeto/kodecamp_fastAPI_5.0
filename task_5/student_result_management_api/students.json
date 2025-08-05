@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Alice",
+        "subject_scores": {
+            "Math": 88.0,
+            "English": 92.0,
+            "Science": 79.0
+        },
+        "average": 86.33333333333333,
+        "grade": "B"
+    }
+]
