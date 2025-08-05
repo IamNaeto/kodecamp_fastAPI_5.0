@@ -1,0 +1,16 @@
+[
+    {
+        "product_id": 1,
+        "name": "Laptop",
+        "price": 749.99,
+        "quantity": 2,
+        "total_price": 1499.98
+    },
+    {
+        "product_id": 6,
+        "name": "Smartphone",
+        "price": 599.99,
+        "quantity": 9,
+        "total_price": 5399.91
+    }
+]
