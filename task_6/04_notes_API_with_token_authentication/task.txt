@@ -1,0 +1,19 @@
+Task 4: Notes API with Token Authentication
+
+Goal: Build a notes management API with JWT token authentication.
+
+Features:
+
+Note class: title, content, date
+
+Endpoints:
+
+POST /login/ — returns a token
+
+POST /notes/ — add a note (requires token)
+
+GET /notes/ — view own notes
+
+Notes stored in a notes.json file per user
+
+Secure routes using JWT Bearer token dependency

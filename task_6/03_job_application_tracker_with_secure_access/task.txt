@@ -1,0 +1,17 @@
+Task 3: Job Application Tracker with Secure Access
+
+Goal: Build an API where each user can only see their own job applications.
+
+Features:
+
+JobApplication class: job title, company, date applied, status
+
+Authenticated users can:
+
+POST /applications/ — add
+
+GET /applications/ — view only their applications
+
+Store per-user data in applications.json
+
+Use dependency to get current logged-in user and filter results

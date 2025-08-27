@@ -1,0 +1,21 @@
+Task 2: Secure Shopping Cart API with Admin Access
+
+Goal: Create a FastAPI shopping API where only admins can add products, but all users can browse and shop.
+
+Features:
+
+User class with role (admin or customer)
+
+Module auth.py to handle authentication & role checking
+
+Endpoints:
+
+POST /admin/add_product/ — admin only
+
+GET /products/ — public
+
+POST /cart/add/ — authenticated users only
+
+Save data to products.json and cart.json
+
+Use dependency injection for role-based access
