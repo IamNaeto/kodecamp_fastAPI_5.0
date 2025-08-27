@@ -1,0 +1,10 @@
+{
+  "alice": [
+    {
+      "job_title": "Frontend Dev",
+      "company": "8thCenturyTech",
+      "date_applied": "2025-08-27",
+      "status": "pending"
+    }
+  ]
+}
