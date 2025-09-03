@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password_hash": "$2b$12$FB8XT9/j64aur.a.aTiiLua1JfNI8GiZ3YD1Ll8N5wQy67LtFhxo6"
+    },
+    {
+      "username": "iamnaeto",
+      "password_hash": "$2b$12$kw7AGAYJHyHVxzqfYnB6Te/43D5ltnpBGoJWtV8.Akda5QoXTuLoa"
+    }
+  ]
+}
